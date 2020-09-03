@@ -1,0 +1,15 @@
+td {
+  background-color: #e67e22;
+  border: 1px solid black;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content{
+  background-color: white;
+  font-weight: normal;
+}
+
+.image{
+  background-color: white;
+}
