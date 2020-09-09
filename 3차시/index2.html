@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      function getSum(){
+        var n = parseInt(document.getElementById("n").value, 10);
+        var m = parseInt(document.getElementById("m").value, 10);
+
+        document.getElementById("sumResult").innerHTML = n + m;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" id="n" value="">
+    <input type="number" id="m" value="">
+    <button type="button" name="submit" onclick="getSum()">계산하기</button>
+    <p id="sumResult"></p>
+  </body>
+</html>
