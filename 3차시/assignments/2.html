@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      function getLeapyear(){
+        year = parseInt(document.getElementById('year').value, 10);
+        if (year%400 == 0 || (year%4 == 0 && year%100 != 0)){
+          document.getElementById('print').innerHTML = '윤년입니다';
+        } else {
+          document.getElementById('print').innerHTML = '윤년이 아닙니다';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id='year' value=""><br>
+    <button type="button" name="submit" onclick="getLeapyear()">계산하기</button>
+    <p id='print'></p>
+  </body>
+</html>

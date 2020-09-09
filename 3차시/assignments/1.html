@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      function getMath(){
+        var n = parseInt(document.getElementById('n').value, 10);
+        var m = parseInt(document.getElementById('m').value, 10);
+        document.getElementById('add').innerHTML = "더하기 : " + (n+m);
+        document.getElementById('subtract').innerHTML = "빼기 : " + (n-m);
+        document.getElementById('multify').innerHTML = "곱하기 : " + (n*m);
+        document.getElementById('divide').innerHTML = "나누기 : " + (n/m);
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" id="n" value=""><br>
+    <input type="number" id="m" value=""><br>
+    <button type="button" name="submit" onclick="getMath()">계산하기</button>
+    <p id="add"></p>
+    <p id='subtract'></p>
+    <p id='multify'></p>
+    <p id='divide'></p>
+
+  </body>
+</html>
