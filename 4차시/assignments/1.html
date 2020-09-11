@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      function printAstro(){
+        var n = parseInt(document.getElementById('input').value, 10)
+        for(i=n-1; i>=0; i--){
+          if(i !== n-1){
+            document.getElementById('window').innerHTML += '<br/>';
+          }
+          for(j=0; j<n-i; j++){
+              document.getElementById('window').innerHTML += '*';
+          }
+        }
+        document.getElementById('window').innerHTML += '<br/>';
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" id='input' value="">
+    <button type="button" name="print" onclick="printAstro()">출력하기</button>
+    <p id="window"></p>
+  </body>
+</html>
