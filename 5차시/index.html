@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My site</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("*").css("border","1px solid #ff0000");
+        $("#name").css("background", "skyblue");
+        $("p").css("border", "1px solid #0000ff");
+        $("p, #name").css("color", "#00ff00");
+        $("p#intro").css("color", "#ffff00");
+        $("a").css("text-decoration", "none");
+        $("div > a[target]").css("color", "#CCC");
+        $(".contents > p").text("안녕");
+        $(".contents").html("<p>안녕하세요 저는 고동우입니다.</p>");
+        alert($(".contents > p").text());
+      });
+
+    </script>
+  </head>
+  <body>
+    <strong>자기소개</strong><br>
+    <img src="profile.png" alt="profile">
+    <h5 id="name">고동우</h5>
+    <p id="intro">안녕하 세요 ICT융합학부 미디어테크놀로지 전공 2학년 고동우라고 합니다.</p>
+    <a href="https://github.com/dongree">Github</a>
+    <p>취미 : 프로야구 보기</p>
+    <div class="">
+      <a href="https://naver.com">네이버</a>
+      <a href="https://naver.com" target="_blank">네이버</a>
+      <a href="https://naver.com">네이버</a>
+      <a href="https://naver.com" target="_blank">네이버</a>
+      <a href="https://naver.com">네이버</a>
+      <a href="https://naver.com" target="_blank">네이버</a>
+    </div>
+
+    <div class="contents">
+      <p></p>
+    </div>
+
+  </body>
+</html>
