@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $.ajax({
+          type : 'get',
+          url : 'http://apis.data.go.kr/1611000/nsdi/BuildingAgeService/attr/getBuildingAge?serviceKey=%2Blu0Y8Kf28cpH9IMwrAM0zun%2BE4YvdkmETJfqz2xlpHbgtgI4uGwmWGa5m0sfBx6k0x3lz9YllQyOfT%2Ftx%2Buug%3D%3D&pageNo=1&numOfRows=10&pnu=1111012500100190000&buldAge=6&buldAgeSe=1&format=json&',
+          success : function(result){
+            //var jsonObject = JSON.parse(result);
+            var numOfRows = result.buildingAges.numOfRows;
+            var pageNo = result.buildingAges.pageNo;
+            var totalCount = result.buildingAges.totalCount;
+
+
+            // document.write("최대 행 개수 : " + numOfRows + "</br>");
+            // document.write("페이지 : " + pageNo + "</br>");
+
+            var headerStr = "";
+            headerStr += "<h3>건설 연도수 통계자료</h3>";
+            headerStr += "<p>최대 행 개수 : " + numOfRows + "</p>";
+            headerStr += "<p>페이지 : " + pageNo + "</p>";
+            headerStr += "<p>검색된 행 개수 : " + totalCount + "</p>";
+
+
+            $("header").html(headerStr);
+            $("h3").css("text-align", "center");
+
+
+            var  tbodyStr = "";
+            var field = result.buildingAges.field;
+
+            for(var i = 0; i<field.length; ++i){
+              tbodyStr += "<tr>";
+              tbodyStr += "<td>" + field[i].agbldgSeCodeNm + "</td>";
+              tbodyStr += "<td>" + field[i].agrdeSeCodeNm + "</td>";
+              tbodyStr += "<td>" + field[i].buldNm + "</td>";
+              tbodyStr += "<td>" + field[i].ldCodeNm + "</td>";
+              tbodyStr += "<td>" + field[i].strctCodeNm + "</td>";
+              tbodyStr += "</tr>"
+
+              $("table > tbody").html(tbodyStr);
+              $("th,td").css("border", "1px solid #000")
+            }
+          }
+
+        });
+      });
+    </script>
+
+  </head>
+  <body>
+    <header>
+
+    </header>
+
+    <article class="">
+      <table>
+        <thead>
+          <tr>
+            <th>건축물 분류</th>
+            <th>건축물 연령</th>
+            <th>건축물 이름</th>
+            <th>건축물 주소</th>
+            <th>건축물 구조분류</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </article>
+
+    <footer>
+
+    </footer>
+  </body>
+</html>
